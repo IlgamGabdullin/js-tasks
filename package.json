@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha-webpack --webpack-config webpack.config-test.js \"src/**/*.test.js\" --mode development",
+    "test:watch": "mocha-webpack --watch --webpack-config webpack.config-test.js \"src/**/*.test.js\" --mode development"
   },
   "author": "Ilgam Gabdullin",
   "license": "ISC",
@@ -16,8 +17,11 @@
     "babel-preset-env": "^1.7.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "mocha": "^5.2.0",
+    "mocha-webpack": "^2.0.0-beta.0",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "webpack-dev-server": "^3.1.5",
+    "webpack-node-externals": "^1.7.2"
   }
 }

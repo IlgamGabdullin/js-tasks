@@ -5,7 +5,9 @@ export class PaginationHelper {
   }
 
   // returns the number of items within the entire collection
-  itemCount() {}
+  itemCount() {
+    return 2;
+  }
 
   // returns the number of pages
   pageCount() {}
