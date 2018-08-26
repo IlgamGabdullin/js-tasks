@@ -45,5 +45,10 @@ describe('PaginationHelper', () => {
       const page = helper.pageIndex(20);
       assert.equal(page, -1);
     });
+
+    it("pageIndex(-20) should return -1", () => {
+      const page = helper.pageIndex(-20);
+      assert.equal(page, -1);
+    });
   });
 });
