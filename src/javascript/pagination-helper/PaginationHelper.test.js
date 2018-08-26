@@ -5,12 +5,12 @@ describe('PaginationHelper', () => {
   const itemsPerPage = 4;
   const helper = new PaginationHelper(['a','b','c','d','e','f'], itemsPerPage);
 
-  it("Method 'itemCount' should return 2", () => {
-    assert.equal(helper.itemCount(), 2);
+  it("Method 'itemCount' should return 6", () => {
+    assert.equal(helper.itemCount(), 6);
   });
 
   it("Method 'pageCount' should return 2", () => {
-    assert.equal(helper.pageCount(), 6);
+    assert.equal(helper.pageCount(), 2);
   });
 
   describe('PaginationHelper.pageItemCount() method', () => {

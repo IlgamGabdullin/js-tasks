@@ -6,16 +6,26 @@ export class PaginationHelper {
 
   // returns the number of items within the entire collection
   itemCount() {
-    return 2;
+    return this.collection.length;
   }
 
   // returns the number of pages
-  pageCount() {}
+  pageCount() {
+    return Math.ceil(this.collection.length / this.itemsPerPage);
+  }
 
   // returns the number of items on the current page.
-  pageItemCount(pageIndex) {}
+  pageItemCount(pageIndex) {
+    if(pageIndex * this.itemsPerPage > this.itemCount()) return -1;
+
+    const isLastPage = pageIndex === this.pageCount() - 1;
+    return isLastPage ? this.itemCount() % this.itemsPerPage : this.itemsPerPage;
+  }
 
   // determines what page an item is on.
-  pageIndex(itemIndex) {}
-  
+  pageIndex(itemIndex) {
+    if (itemIndex > this.itemCount() - 1) return -1;
+
+    return Math.floor(itemIndex / this.itemsPerPage);
+  }
 }
